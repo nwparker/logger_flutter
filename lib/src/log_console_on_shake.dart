@@ -4,11 +4,13 @@ class LogConsoleOnShake extends StatefulWidget {
   final Widget child;
   final bool dark;
   final bool debugOnly;
+  final double shakeThresholdGravity
 
   LogConsoleOnShake({
     @required this.child,
     this.dark,
     this.debugOnly = true,
+    this.shakeThresholdGravity = 1.25,
   });
 
   @override
@@ -39,7 +41,7 @@ class _LogConsoleOnShakeState extends State<LogConsoleOnShake> {
   }
 
   _init() {
-    _detector = ShakeDetector(onPhoneShake: _openLogConsole);
+    _detector = ShakeDetector(onPhoneShake: _openLogConsole, shakeThresholdGravity: shakeThresholdGravity);
     _detector.startListening();
   }
 
