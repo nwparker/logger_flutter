@@ -4,7 +4,7 @@ class LogConsoleOnShake extends StatefulWidget {
   final Widget child;
   final bool dark;
   final bool debugOnly;
-  final double shakeThresholdGravity
+  final double shakeThresholdGravity;
 
   LogConsoleOnShake({
     @required this.child,
